@@ -1,0 +1,46 @@
+{
+  "AutoScalingGroupName": "network-asg",
+  "MixedInstancesPolicy": {
+    "LaunchTemplate": {
+      "LaunchTemplateSpecification": {
+        "LaunchTemplateName": "network-launch-template",
+        "Version": "$Default"
+      },
+      "Overrides": [
+        {
+          "InstanceType": "c5.large"
+        },
+        {
+          "InstanceType": "c5a.large"
+        },
+        {
+          "InstanceType": "m5.large"
+        },
+        {
+          "InstanceType": "m5a.large"
+        },
+        {
+          "InstanceType": "c4.large"
+        },
+        {
+          "InstanceType": "m4.large"
+        },
+        {
+          "InstanceType": "c3.large"
+        },
+        {
+          "InstanceType": "m3.large"
+        }
+      ]
+    },
+    "InstancesDistribution": {
+      "OnDemandBaseCapacity": 1,
+      "OnDemandPercentageAboveBaseCapacity": 0,
+      "SpotAllocationStrategy": "capacity-optimized"
+    }
+  },
+  "MinSize": 1,
+  "MaxSize": 5,
+  "DesiredCapacity": 3,
+  "VPCZoneIdentifier": "vpc-078c6871f771f25d6"
+}
